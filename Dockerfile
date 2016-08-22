@@ -4,10 +4,9 @@ RUN mkdir /app
 WORKDIR /app
 
 COPY project.json /app
-RUN ["dotnet", "restore"]
-
+RUN sudo dotnet restore
 COPY . /app
-RUN ["dotnet", "build"]
+RUN sudo dotnet build
 
 EXPOSE 5000/tcp
-CMD ["dotnet", "run"]
+RUN sudo dotnet run
